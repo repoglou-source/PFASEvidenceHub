@@ -1417,23 +1417,13 @@
     // =========================================================
 
     const form = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      formMessage.textContent =
-        "Thank you. Your message has been recorded locally for this MVP. The form is not connected to a backend yet.";
-
-      formMessage.classList.remove("hidden");
-
-      form.reset();
-    });
+form.addEventListener("submit", function (event) {
+  if (!form.checkValidity()) {
+    event.preventDefault();
+    form.reportValidity();
+  }
+});
 
     // =========================================================
     // CURRENT YEAR
