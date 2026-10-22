@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="PFAS Evidence Hub helps European shoppers understand and evaluate PFAS-free product claims through traceable evidence."
+  />
+
+  <title>PFAS Evidence Hub | Evidence Behind PFAS-Free Claims</title>
+
+  <!-- =========================================================
+       TAILWIND CSS
+  ========================================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: [
+              "Inter",
+              "ui-sans-serif",
+              "system-ui",
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "sans-serif"
+            ]
+          },
+
+          colors: {
+            brand: {
+              50: "#EFF8FF",
+              100: "#DDEEFF",
+              200: "#BBDFFF",
+              300: "#83C7F5",
+              400: "#42A8E8",
+              500: "#1685C5",
+              600: "#0D6FA8",
+              700: "#0B5B8A",
+              800: "#0C4A6E",
+              900: "#0B3954"
+            },
+
+            teal: {
+              50: "#EDFCF8",
+              100: "#D5F7EF",
+              200: "#ACEBDD",
+              300: "#72D8C3",
+              400: "#36BFA5",
+              500: "#159B83",
+              600: "#087F6D",
+              700: "#076656",
+              800: "#075346",
+              900: "#063F36"
+            },
+
+            navy: {
+              50: "#F1F5F9",
+              100: "#E2E8F0",
+              200: "#CBD5E1",
+              300: "#94A3B8",
+              400: "#64748B",
+              500: "#475569",
+              600: "#334155",
+              700: "#1E293B",
+              800: "#172033",
+              900: "#0B1220"
+            },
+
+            amber: {
+              50: "#FFF9EB",
+              100: "#FEF0C7",
+              200: "#FDE68A",
+              500: "#D89A08",
+              600: "#B77905"
+            }
+          },
+
+          boxShadow: {
+            corporate:
+              "0 20px 60px rgba(11, 57, 84, 0.12)",
+            card:
+              "0 10px 35px rgba(11, 57, 84, 0.08)",
+            glow:
+              "0 0 0 1px rgba(22, 133, 197, 0.08), 0 25px 70px rgba(22, 133, 197, 0.14)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Corporate-style font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(13, 111, 168, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 111, 168, 0.045) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+
+    .hero-glow {
+      background:
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(66, 168, 232, 0.18),
+          transparent 45%
+        );
+    }
+
+    .image-overlay {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(11, 18, 32, 0.02) 30%,
+          rgba(11, 18, 32, 0.78) 100%
+        );
+    }
+
+    .fade-up {
+      animation: fadeUp 0.7s ease-out both;
+    }
+
+    .fade-up-delay {
+      animation: fadeUp 0.7s 0.15s ease-out both;
+    }
+
+    .float {
+      animation: floating 5s ease-in-out infinite;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floating {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-navy-900 antialiased">
+
+  <!-- =========================================================
+       TOP INFORMATION BAR
+  ========================================================== -->
+  <div class="bg-navy-900 text-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-2.5 text-xs sm:px-8">
+      <p class="flex items-center gap-2">
+        <span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+        Evidence-focused information for European consumers
+      </p>
+
+      <a
+        href="mailto:r.epoglou@gmail.com"
+        class="hidden transition hover:text-teal-300 sm:block"
+      >
+        r.epoglou@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+
+      <a
+        href="#top"
+        aria-label="PFAS Evidence Hub home"
+        class="flex items-center gap-3"
+      >
+        <span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-600 text-sm font-extrabold text-white shadow-sm"
+        >
+          PE
+        </span>
+
+        <span>
+          <span class="block text-base font-extrabold tracking-tight text-navy-900">
+            PFAS Evidence Hub
+          </span>
+          <span class="hidden text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-600 sm:block">
+            Evidence. Transparency. Confidence.
+          </span>
+        </span>
+      </a>
+
+      <nav
+        class="hidden items-center gap-7 text-sm font-semibold text-navy-500 lg:flex"
+        aria-label="Main navigation"
+      >
+        <a href="#why" class="transition hover:text-brand-600">Why it matters</a>
+        <a href="#how-it-works" class="transition hover:text-brand-600">How it works</a>
+        <a href="#evidence" class="transition hover:text-brand-600">Evidence</a>
+        <a href="#faq" class="transition hover:text-brand-600">FAQ</a>
+      </nav>
+
+      <a
+        href="#contact"
+        class="rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+      >
+        Contact us
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+    <section class="relative overflow-hidden bg-slate-50">
+
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="hero-glow absolute inset-0"></div>
+
+      <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-16 sm:px-8 lg:grid-cols-[1.02fr_.98fr] lg:py-24">
+
+        <!-- Hero copy -->
+        <div class="fade-up">
+
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-brand-700 shadow-sm">
+            <span class="flex h-2 w-2 rounded-full bg-teal-500"></span>
+            European PFAS intelligence
+          </div>
+
+          <h1 class="max-w-3xl text-4xl font-extrabold leading-[1.06] tracking-[-0.035em] text-navy-900 sm:text-5xl lg:text-[4.25rem]">
+            Evidence behind
+            <span class="bg-gradient-to-r from-brand-600 to-teal-600 bg-clip-text text-transparent">
+              PFAS-free
+            </span>
+            claims.
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-navy-500 sm:text-xl">
+            PFAS Evidence Hub turns scattered product information and repeated supplier enquiries into a shared, traceable evidence record—showing both what is known and what remains unanswered.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-600/20 transition hover:-translate-y-0.5 hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+            >
+              Contact us
+
+              <svg
+                class="ml-2 h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#how-it-works"
+              class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-navy-800 transition hover:border-brand-300 hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+            >
+              Explore the evidence model
+            </a>
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="mt-9 flex flex-wrap gap-3">
+            <span class="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-navy-600 shadow-sm">
+              ✓ PFAS-specific
+            </span>
+
+            <span class="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-navy-600 shadow-sm">
+              ✓ Traceable sources
+            </span>
+
+            <span class="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-navy-600 shadow-sm">
+              ✓ Europe-focused
+            </span>
+          </div>
+        </div>
+
+        <!-- Hero evidence dashboard -->
+        <div class="fade-up-delay relative">
+
+          <div class="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-brand-300/30 blur-3xl"></div>
+          <div class="absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-teal-300/30 blur-3xl"></div>
+
+          <div class="relative rounded-[2rem] border border-slate-200 bg-white p-3 shadow-corporate">
+
+            <!-- Hero image -->
+            <div class="relative h-[430px] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-brand-900 via-brand-700 to-teal-700">
+
+              <!--
+                The supplied Magnific links are page URLs rather than direct
+                image files, so browsers cannot reliably render them through
+                <img src="">.
+
+                The image cards below use the supplied links as the source
+                destinations. Replace the image URL variables in the
+                JavaScript section with direct image/CDN URLs when available.
+              -->
+              <img
+                id="heroImage"
+                src=""
+                alt="PFAS product evidence context"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+
+              <div class="absolute inset-0 bg-gradient-to-br from-brand-900/80 via-brand-800/50 to-teal-800/80"></div>
+
+              <!-- Decorative corporate visual -->
+              <div class="absolute inset-0 flex items-center justify-center p-8">
+
+                <div class="float w-full max-w-md rounded-2xl border border-white/20 bg-white/95 p-6 shadow-2xl backdrop-blur">
+
+                  <div class="flex items-center justify-between border-b border-slate-200 pb-5">
+                    <div>
+                      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-600">
+                        Evidence record
+                      </p>
+                      <p class="mt-1 text-lg font-extrabold text-navy-900">
+                        Product PFAS status
+                      </p>
+                    </div>
+
+                    <span class="rounded-full bg-teal-50 px-3 py-1.5 text-xs font-bold text-teal-700">
+                      Under review
+                    </span>
+                  </div>
+
+                  <div class="mt-5 space-y-3">
+
+                    <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-navy-500">
+                          PFAS-free claim
+                        </span>
+                        <span class="font-bold text-teal-600">Identified</span>
+                      </div>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-navy-500">
+                          Supporting source
+                        </span>
+                        <span class="font-bold text-teal-600">Recorded</span>
+                      </div>
+                    </div>
+
+                    <div class="rounded-xl border border-amber-200 bg-amber-50 p-4">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-amber-800">
+                          Unanswered questions
+                        </span>
+                        <span class="font-bold text-amber-600">02</span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="mt-5 flex items-center justify-between text-xs">
+                    <span class="text-slate-400">
+                      Last reviewed: MVP
+                    </span>
+
+                    <span class="font-bold text-brand-600">
+                      View evidence →
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero bottom stats -->
+            <div class="grid grid-cols-3 divide-x divide-slate-200 py-5">
+              <div class="px-4 text-center">
+                <p class="text-xl font-extrabold text-navy-900">01</p>
+                <p class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-navy-400">
+                  Claim
+                </p>
+              </div>
+
+              <div class="px-4 text-center">
+                <p class="text-xl font-extrabold text-teal-600">03</p>
+                <p class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-navy-400">
+                  Sources
+                </p>
+              </div>
+
+              <div class="px-4 text-center">
+                <p class="text-xl font-extrabold text-amber-500">02</p>
+                <p class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-navy-400">
+                  Questions
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BRAND STRIP
+    ========================================================== -->
+    <section class="border-b border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-5 px-5 py-6 sm:px-8 md:grid-cols-3">
+
+        <div class="flex items-center gap-4 rounded-xl bg-brand-50 px-5 py-4">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white">
+            ✓
+          </div>
+          <div>
+            <p class="text-sm font-bold text-navy-900">PFAS-specific</p>
+            <p class="text-xs text-navy-500">Focus on the claim that matters</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 rounded-xl bg-teal-50 px-5 py-4">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-white">
+            ↗
+          </div>
+          <div>
+            <p class="text-sm font-bold text-navy-900">Evidence-led</p>
+            <p class="text-xs text-navy-500">Connect claims with information</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 rounded-xl bg-slate-50 px-5 py-4">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-800 text-white">
+            EU
+          </div>
+          <div>
+            <p class="text-sm font-bold text-navy-900">Europe-focused</p>
+            <p class="text-xs text-navy-500">Designed for European shoppers</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         WHY IT MATTERS
+    ========================================================== -->
+    <section id="why" class="scroll-mt-28">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+
+        <div class="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+
+          <div>
+            <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-600">
+              The problem
+            </p>
+
+            <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+              “PFAS-free” should be easier to understand.
+            </h2>
+
+            <p class="mt-6 text-lg leading-8 text-navy-500">
+              Consumers are often faced with product claims but have limited visibility into the evidence behind them.
+            </p>
+
+            <div class="mt-8 rounded-2xl border-l-4 border-brand-500 bg-brand-50 p-5">
+              <p class="text-sm font-semibold leading-6 text-brand-900">
+                The Hub does not treat missing information as proof. It makes the gap visible.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+
+            <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition hover:-translate-y-1">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="7"/>
+                  <path d="M20 20l-4-4"/>
+                </svg>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold">Scattered information</h3>
+
+              <p class="mt-3 text-sm leading-7 text-navy-500">
+                Relevant information can be spread across product pages, packaging, supplier responses and technical documents.
+              </p>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition hover:-translate-y-1">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-100 text-teal-700">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 7h16"/>
+                  <path d="M4 12h11"/>
+                  <path d="M4 17h7"/>
+                  <circle cx="18" cy="17" r="2"/>
+                </svg>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold">Repeated enquiries</h3>
+
+              <p class="mt-3 text-sm leading-7 text-navy-500">
+                The same questions may need to be sent repeatedly because previous responses are difficult to find or compare.
+              </p>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition hover:-translate-y-1">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
+                <span class="text-xl font-extrabold">?</span>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold">Unclear evidence</h3>
+
+              <p class="mt-3 text-sm leading-7 text-navy-500">
+                A statement may be clear while the evidence supporting its scope or meaning remains difficult to assess.
+              </p>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-card transition hover:-translate-y-1">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-100 text-navy-700">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold">Need for traceability</h3>
+
+              <p class="mt-3 text-sm leading-7 text-navy-500">
+                People need a clearer view of where information came from and what is still unanswered.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         VISUAL PRODUCT CATEGORIES
+    ========================================================== -->
+    <section id="evidence" class="scroll-mt-28 bg-navy-900">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+
+        <div class="max-w-3xl">
+          <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-teal-300">
+            PFAS in everyday products
+          </p>
+
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Follow the claim from the product to the evidence.
+          </h2>
+
+          <p class="mt-5 text-lg leading-8 text-slate-300">
+            The Hub is designed to make PFAS-free claims easier to investigate across everyday European product categories.
+          </p>
+        </div>
+
+        <!-- Photo grid -->
+        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+
+          <!-- Food -->
+          <a
+            href="https://www.magnific.com/free-photo/food-crisis-concept-still-life_38688069.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative min-h-[370px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-brand-800 to-teal-800 shadow-xl"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-700 via-brand-800 to-teal-800"></div>
+
+            <img
+              class="category-image absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
+              data-image-key="food"
+              alt="Food product context"
+              loading="lazy"
+            />
+
+            <div class="absolute inset-0 image-overlay"></div>
+
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <span class="rounded-full bg-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">
+                Product category
+              </span>
+
+              <h3 class="mt-4 text-2xl font-extrabold text-white">
+                Food & packaging
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 text-slate-200">
+                What information supports a PFAS-related product claim?
+              </p>
+
+              <span class="mt-5 inline-flex text-xs font-bold text-teal-300">
+                Explore source ↗
+              </span>
+            </div>
+          </a>
+
+          <!-- Dental / personal care -->
+          <a
+            href="https://www.magnific.com/free-photo/beautiful-woman-using-dental-floss-cleaning-her-teeth-bathroom_25777089.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative min-h-[370px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-brand-800 to-teal-800 shadow-xl"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-800 to-brand-800"></div>
+
+            <img
+              class="category-image absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
+              data-image-key="dental"
+              alt="Personal care product context"
+              loading="lazy"
+            />
+
+            <div class="absolute inset-0 image-overlay"></div>
+
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <span class="rounded-full bg-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">
+                Product category
+              </span>
+
+              <h3 class="mt-4 text-2xl font-extrabold text-white">
+                Personal care
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 text-slate-200">
+                Trace what is stated, documented and still unknown.
+              </p>
+
+              <span class="mt-5 inline-flex text-xs font-bold text-teal-300">
+                Explore source ↗
+              </span>
+            </div>
+          </a>
+
+          <!-- Cookware -->
+          <a
+            href="https://www.magnific.com/free-photo/overhead-shot-two-metal-frying-pans-black-background_10835706.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative min-h-[370px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-700 to-brand-900 shadow-xl"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-brand-900"></div>
+
+            <img
+              class="category-image absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
+              data-image-key="cookware"
+              alt="Cookware product context"
+              loading="lazy"
+            />
+
+            <div class="absolute inset-0 image-overlay"></div>
+
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <span class="rounded-full bg-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">
+                Product category
+              </span>
+
+              <h3 class="mt-4 text-2xl font-extrabold text-white">
+                Cookware
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 text-slate-200">
+                Understand the scope behind PFAS-free cookware claims.
+              </p>
+
+              <span class="mt-5 inline-flex text-xs font-bold text-teal-300">
+                Explore source ↗
+              </span>
+            </div>
+          </a>
+
+          <!-- Cosmetics -->
+          <a
+            href="https://www.magnific.com/free-ai-image/makeup-cosmetics-presentation_410570470.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative min-h-[370px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-teal-800 to-brand-900 shadow-xl"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-800 to-brand-900"></div>
+
+            <img
+              class="category-image absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
+              data-image-key="cosmetics"
+              alt="Cosmetics product context"
+              loading="lazy"
+            />
+
+            <div class="absolute inset-0 image-overlay"></div>
+
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <span class="rounded-full bg-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">
+                Product category
+              </span>
+
+              <h3 class="mt-4 text-2xl font-extrabold text-white">
+                Cosmetics
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 text-slate-200">
+                Separate a product claim from the evidence supporting it.
+              </p>
+
+              <span class="mt-5 inline-flex text-xs font-bold text-teal-300">
+                Explore source ↗
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Apparel strip -->
+        <a
+          href="https://www.magnific.com/free-photo/blonde-girl-with-ponytail-leaning-wooden-wall_27002174.htm"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group mt-5 grid overflow-hidden rounded-2xl border border-white/10 bg-brand-800 lg:grid-cols-[0.8fr_1.2fr]"
+        >
+          <div class="relative min-h-[240px] bg-gradient-to-br from-brand-700 to-teal-800">
+            <img
+              class="category-image absolute inset-0 h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
+              data-image-key="apparel"
+              alt="Apparel and textile product context"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-900/60 to-transparent"></div>
+          </div>
+
+          <div class="flex flex-col justify-center p-8 lg:p-12">
+            <span class="text-xs font-bold uppercase tracking-[0.18em] text-teal-300">
+              Additional category
+            </span>
+
+            <h3 class="mt-3 text-2xl font-extrabold text-white sm:text-3xl">
+              Textiles & apparel
+            </h3>
+
+            <p class="mt-4 max-w-xl leading-7 text-slate-300">
+              Product claims can become easier to evaluate when their evidence,
+              source and unanswered questions are kept together.
+            </p>
+
+            <span class="mt-6 text-sm font-bold text-teal-300">
+              Explore image source ↗
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HOW IT WORKS
+    ========================================================== -->
+    <section id="how-it-works" class="scroll-mt-28 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-600">
+            How it works
+          </p>
+
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+            Three steps from claim to clarity.
+          </h2>
+
+          <p class="mt-5 text-lg leading-8 text-navy-500">
+            A structured approach to product information makes it easier to see what has been established and where evidence is still needed.
+          </p>
+        </div>
+
+        <div class="relative mt-14 grid gap-6 md:grid-cols-3">
+
+          <div class="absolute left-[18%] right-[18%] top-9 hidden h-px bg-gradient-to-r from-brand-300 via-teal-300 to-brand-300 md:block"></div>
+
+          <article class="relative rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-card">
+            <div class="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-600 text-xl font-extrabold text-white shadow-lg shadow-brand-600/20">
+              01
+            </div>
+
+            <h3 class="mt-7 text-xl font-extrabold">
+              Identify
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-navy-500">
+              Find a product and identify the PFAS-free claim you want to understand.
+            </p>
+          </article>
+
+          <article class="relative rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-card">
+            <div class="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-600 text-xl font-extrabold text-white shadow-lg shadow-teal-600/20">
+              02
+            </div>
+
+            <h3 class="mt-7 text-xl font-extrabold">
+              Document
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-navy-500">
+              Connect the claim with supplier statements, product information and relevant evidence.
+            </p>
+          </article>
+
+          <article class="relative rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-card">
+            <div class="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-navy-800 text-xl font-extrabold text-white shadow-lg shadow-navy-800/20">
+              03
+            </div>
+
+            <h3 class="mt-7 text-xl font-extrabold">
+              Understand
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-navy-500">
+              See what the available evidence supports—and what remains unanswered.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         EVIDENCE DASHBOARD SECTION
+    ========================================================== -->
+    <section class="bg-white">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+
+        <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+
+          <div>
+            <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-teal-600">
+              Evidence architecture
+            </p>
+
+            <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+              A clearer record of what is known—and what is not.
+            </h2>
+
+            <p class="mt-5 text-lg leading-8 text-navy-500">
+              The value is not simply collecting claims. It is preserving the relationship between the claim, its source and the questions that remain.
+            </p>
+
+            <div class="mt-8 space-y-4">
+
+              <div class="flex gap-4 rounded-xl border border-slate-200 p-5">
+                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-100 font-bold text-teal-700">
+                  ✓
+                </div>
+                <div>
+                  <p class="font-bold">Claim</p>
+                  <p class="mt-1 text-sm leading-6 text-navy-500">
+                    What exactly does the manufacturer or supplier say?
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 rounded-xl border border-slate-200 p-5">
+                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-100 font-bold text-brand-700">
+                  ↗
+                </div>
+                <div>
+                  <p class="font-bold">Evidence</p>
+                  <p class="mt-1 text-sm leading-6 text-navy-500">
+                    What information is available to support or contextualise the claim?
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 rounded-xl border border-amber-200 bg-amber-50 p-5">
+                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-100 font-bold text-amber-600">
+                  ?
+                </div>
+                <div>
+                  <p class="font-bold text-amber-900">Open questions</p>
+                  <p class="mt-1 text-sm leading-6 text-amber-800">
+                    Which important information is still missing or unclear?
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Corporate dashboard -->
+          <div class="rounded-[2rem] border border-slate-200 bg-slate-50 p-4 shadow-corporate sm:p-6">
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-6">
+
+              <div class="flex items-start justify-between gap-4 border-b border-slate-200 pb-6">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-brand-600">
+                    Product evidence
+                  </p>
+                  <h3 class="mt-1 text-xl font-extrabold">
+                    PFAS-free claim
+                  </h3>
+                </div>
+
+                <span class="rounded-full bg-teal-100 px-3 py-1.5 text-xs font-bold text-teal-700">
+                  Evidence record
+                </span>
+              </div>
+
+              <div class="mt-6">
+
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-navy-500">
+                    Evidence completeness
+                  </span>
+                  <span class="text-sm font-extrabold text-brand-600">
+                    72%
+                  </span>
+                </div>
+
+                <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[72%] rounded-full bg-gradient-to-r from-brand-600 to-teal-500"></div>
+                </div>
+
+              </div>
+
+              <div class="mt-7 space-y-3">
+
+                <div class="flex items-center justify-between rounded-xl bg-teal-50 p-4">
+                  <div>
+                    <p class="text-sm font-bold">Supplier statement</p>
+                    <p class="mt-1 text-xs text-teal-700">Source recorded</p>
+                  </div>
+                  <span class="font-bold text-teal-600">✓</span>
+                </div>
+
+                <div class="flex items-center justify-between rounded-xl bg-brand-50 p-4">
+                  <div>
+                    <p class="text-sm font-bold">Product documentation</p>
+                    <p class="mt-1 text-xs text-brand-700">Source recorded</p>
+                  </div>
+                  <span class="font-bold text-brand-600">✓</span>
+                </div>
+
+                <div class="flex items-center justify-between rounded-xl bg-amber-50 p-4">
+                  <div>
+                    <p class="text-sm font-bold">Independent evidence</p>
+                    <p class="mt-1 text-xs text-amber-700">Needs review</p>
+                  </div>
+                  <span class="font-bold text-amber-600">!</span>
+                </div>
+
+              </div>
+
+              <div class="mt-6 border-t border-slate-200 pt-5">
+                <p class="text-xs font-bold uppercase tracking-wider text-navy-400">
+                  Remaining questions
+                </p>
+
+                <ul class="mt-3 space-y-2 text-sm text-navy-600">
+                  <li>• What is the exact scope of the claim?</li>
+                  <li>• When was the supporting information last reviewed?</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BENEFITS
+    ========================================================== -->
+    <section class="bg-gradient-to-br from-brand-50 via-white to-teal-50">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+
+          <div>
+            <p class="text-4xl font-extrabold text-brand-600">01</p>
+            <h3 class="mt-4 font-extrabold">Find</h3>
+            <p class="mt-2 text-sm leading-6 text-navy-500">
+              Bring PFAS-related product information together.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-extrabold text-teal-600">02</p>
+            <h3 class="mt-4 font-extrabold">Compare</h3>
+            <p class="mt-2 text-sm leading-6 text-navy-500">
+              Understand differences between claims and evidence.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-extrabold text-brand-600">03</p>
+            <h3 class="mt-4 font-extrabold">Trace</h3>
+            <p class="mt-2 text-sm leading-6 text-navy-500">
+              Preserve the source behind the information.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-extrabold text-teal-600">04</p>
+            <h3 class="mt-4 font-extrabold">Question</h3>
+            <p class="mt-2 text-sm leading-6 text-navy-500">
+              Make missing evidence visible instead of assuming.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONIALS
+    ========================================================== -->
+    <section class="bg-white">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+
+        <div class="text-center">
+          <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-600">
+            Early feedback
+          </p>
+
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Built around a real information gap.
+          </h2>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+
+          <blockquote class="rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-card">
+            <div class="text-4xl font-extrabold text-brand-300">“</div>
+
+            <p class="mt-2 leading-7 text-navy-600">
+              I wanted to know whether a PFAS-free claim was actually supported by evidence.
+            </p>
+
+            <footer class="mt-6 border-t border-slate-200 pt-5">
+              <p class="text-sm font-bold">European consumer</p>
+              <p class="mt-1 text-xs text-navy-400">Placeholder testimonial</p>
+            </footer>
+          </blockquote>
+
+          <blockquote class="rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-card">
+            <div class="text-4xl font-extrabold text-teal-300">“</div>
+
+            <p class="mt-2 leading-7 text-navy-600">
+              Having the information in one structured record makes the questions much easier to understand.
+            </p>
+
+            <footer class="mt-6 border-t border-slate-200 pt-5">
+              <p class="text-sm font-bold">Research participant</p>
+              <p class="mt-1 text-xs text-navy-400">Placeholder testimonial</p>
+            </footer>
+          </blockquote>
+
+          <blockquote class="rounded-2xl border border-slate-200 bg-slate-50 p-7 shadow-card">
+            <div class="text-4xl font-extrabold text-brand-300">“</div>
+
+            <p class="mt-2 leading-7 text-navy-600">
+              The most useful part is seeing what remains unknown rather than assuming the claim is proven.
+            </p>
+
+            <footer class="mt-6 border-t border-slate-200 pt-5">
+              <p class="text-sm font-bold">Early user</p>
+              <p class="mt-1 text-xs text-navy-400">Placeholder testimonial</p>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FAQ
+    ========================================================== -->
+    <section id="faq" class="scroll-mt-28 bg-slate-50">
+      <div class="mx-auto max-w-4xl px-5 py-20 sm:px-8 lg:py-28">
+
+        <div class="text-center">
+          <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-600">
+            FAQ
+          </p>
+
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Questions about PFAS-free claims
+          </h2>
+        </div>
+
+        <div class="mt-12 divide-y divide-slate-200 border-y border-slate-200">
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-bold">
+              <span>Does a “PFAS-free” label automatically prove a product is PFAS-free?</span>
+              <span class="text-2xl font-light text-brand-600 transition group-open:rotate-45">+</span>
+            </summary>
+
+            <p class="mt-4 leading-7 text-navy-500">
+              Not necessarily. A claim and the evidence supporting that claim are different things. PFAS Evidence Hub is designed to make the available supporting information and remaining questions easier to identify.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-bold">
+              <span>What kind of evidence can be recorded?</span>
+              <span class="text-2xl font-light text-brand-600 transition group-open:rotate-45">+</span>
+            </summary>
+
+            <p class="mt-4 leading-7 text-navy-500">
+              Depending on the product, this may include manufacturer statements, supplier responses, product documentation, test information or other relevant evidence.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-bold">
+              <span>Is PFAS Evidence Hub a certification scheme?</span>
+              <span class="text-2xl font-light text-brand-600 transition group-open:rotate-45">+</span>
+            </summary>
+
+            <p class="mt-4 leading-7 text-navy-500">
+              The MVP is intended as an evidence and information layer. It should not be interpreted as automatically certifying or independently testing every product listed.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-bold">
+              <span>Why focus specifically on PFAS?</span>
+              <span class="text-2xl font-light text-brand-600 transition group-open:rotate-45">+</span>
+            </summary>
+
+            <p class="mt-4 leading-7 text-navy-500">
+              Because consumers often need a very specific answer: what evidence supports a product's PFAS-free claim, rather than a general sustainability or eco-friendly statement.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-bold">
+              <span>Can organisations contribute information?</span>
+              <span class="text-2xl font-light text-brand-600 transition group-open:rotate-45">+</span>
+            </summary>
+
+            <p class="mt-4 leading-7 text-navy-500">
+              Yes. The MVP is particularly interested in conversations with organisations, researchers, consumer groups and product stakeholders.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+    <section id="contact" class="scroll-mt-28 relative overflow-hidden bg-gradient-to-br from-navy-900 via-brand-900 to-teal-900">
+
+      <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-500/20 blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-teal-500/20 blur-3xl"></div>
+
+      <div class="relative mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:py-28">
+
+        <div class="text-white">
+
+          <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-teal-300">
+            Contact
+          </p>
+
+          <h2 class="mt-4 max-w-xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Help build a clearer evidence layer for PFAS-free products.
+          </h2>
+
+          <p class="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+            We welcome conversations with European consumers, researchers, organisations and product stakeholders.
+          </p>
+
+          <a
+            href="mailto:r.epoglou@gmail.com"
+            class="mt-8 inline-flex items-center gap-4 rounded-xl border border-white/15 bg-white/10 px-5 py-4 backdrop-blur transition hover:bg-white/15"
+          >
+            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500 text-white">
+              @
+            </span>
+
+            <span>
+              <span class="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                Email
+              </span>
+              <span class="mt-1 block font-bold text-white">
+                r.epoglou@gmail.com
+              </span>
+            </span>
+          </a>
+
+        </div>
+
+        <!-- Contact form -->
+        <div class="rounded-3xl border border-white/10 bg-white p-6 shadow-2xl sm:p-8">
+
+          <div class="mb-6">
+            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-brand-600">
+              Get in touch
+            </p>
+
+            <h3 class="mt-2 text-2xl font-extrabold text-navy-900">
+              Start a conversation
+            </h3>
+          </div>
+
+          <form id="contactForm" class="space-y-5" novalidate>
+
+            <div>
+              <label for="name" class="block text-sm font-bold text-navy-800">
+                Name
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                placeholder="Your name"
+                class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-bold text-navy-800">
+                Email
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="you@example.com"
+                class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-bold text-navy-800">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Tell us what you would like to know..."
+                class="mt-2 w-full resize-y rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full rounded-xl bg-brand-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-600/20 transition hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+            >
+              Send message
+            </button>
+
+            <p
+              id="formMessage"
+              class="hidden rounded-xl bg-teal-50 px-4 py-3 text-sm font-semibold text-teal-700"
+              role="status"
+              aria-live="polite"
+            ></p>
+
+            <p class="text-xs leading-5 text-slate-400">
+              This MVP contact form has no backend connection. Messages are not transmitted automatically.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="bg-navy-950 text-slate-400">
+    <div class="mx-auto max-w-7xl px-5 py-10 sm:px-8">
+
+      <div class="flex flex-col justify-between gap-8 md:flex-row md:items-center">
+
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-teal-500 text-sm font-extrabold text-white">
+              PE
+            </span>
+
+            <span class="font-extrabold text-white">
+              PFAS Evidence Hub
+            </span>
+          </div>
+
+          <p class="mt-3 max-w-md text-sm leading-6">
+            Evidence-focused information for understanding PFAS-free product claims in Europe.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
+          <a href="#why" class="transition hover:text-white">Why it matters</a>
+          <a href="#how-it-works" class="transition hover:text-white">How it works</a>
+          <a href="#evidence" class="transition hover:text-white">Evidence</a>
+          <a href="#faq" class="transition hover:text-white">FAQ</a>
+          <a href="#contact" class="transition hover:text-white">Contact</a>
+        </div>
+
+      </div>
+
+      <div class="mt-8 border-t border-white/10 pt-6 text-xs">
+        © <span id="year"></span> PFAS Evidence Hub. MVP concept.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+  <script>
+    /*
+      IMPORTANT IMAGE NOTE
+
+      The supplied Magnific URLs are webpage URLs, not direct .jpg/.png
+      image files. A browser cannot reliably use a webpage URL as the
+      source of an <img> element.
+
+      The five source links are therefore preserved as clickable image
+      destinations in the page.
+
+      Once Magnific provides direct image/CDN URLs, put those direct
+      image URLs in the IMAGE_SOURCES object below and the photographs
+      will automatically appear in the design.
+    */
+
+    const IMAGE_SOURCES = {
+      food: "",
+      dental: "",
+      cookware: "",
+      cosmetics: "",
+      apparel: ""
+    };
+
+    // Populate images only when direct image URLs are supplied.
+    document.querySelectorAll("[data-image-key]").forEach((image) => {
+      const key = image.dataset.imageKey;
+
+      if (IMAGE_SOURCES[key]) {
+        image.src = IMAGE_SOURCES[key];
+      } else {
+        // Keep the designed gradient background visible when no
+        // direct image URL is available.
+        image.style.display = "none";
+      }
+    });
+
+    // =========================================================
+    // CONTACT FORM
+    // =========================================================
+
+    const form = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      formMessage.textContent =
+        "Thank you. Your message has been recorded locally for this MVP. The form is not connected to a backend yet.";
+
+      formMessage.classList.remove("hidden");
+
+      form.reset();
+    });
+
+    // =========================================================
+    // CURRENT YEAR
+    // =========================================================
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
